@@ -1,0 +1,19 @@
+{
+  "cors": {
+    "allowedOrigins": [
+      "http://localhost:3000"
+    ]
+  },
+  "connectionString": "mongodb://localhost/jwt_sample",
+  "webtoken": {
+    "secret": "[secret]",
+    "audience": "https://myapi.com/protected",
+    "algorithm": "HS256",
+    "expiresIn": "15m"
+  },
+  "google": {
+    "clientId": "[clientId]",
+    "clientSecret": "[clientSecret]",
+    "redirect": "http://localhost:3000/oauth2/google-callback"
+  }
+}
