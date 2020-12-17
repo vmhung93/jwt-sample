@@ -4,16 +4,16 @@
       "http://localhost:3000"
     ]
   },
-  "connectionString": "mongodb://localhost/jwt_sample",
+  "connectionString": "mongodb://localhost/[database]",
   "webtoken": {
     "secret": "[secret]",
-    "audience": "https://myapi.com/protected",
+    "audience": "[audience]",
     "algorithm": "HS256",
     "expiresIn": "15m"
   },
   "google": {
-    "clientId": "[clientId]",
-    "clientSecret": "[clientSecret]",
-    "redirect": "http://localhost:3000/oauth2/google-callback"
+    "clientId": "[google-clientId]",
+    "clientSecret": "[google-clientSecret]",
+    "redirect": "[google-callback]"
   }
 }
