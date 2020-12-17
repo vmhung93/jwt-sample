@@ -12,8 +12,8 @@ mongoose.connect(config.get("connectionString"), connectionOptions);
 mongoose.Promise = global.Promise;
 
 const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", console.warn.bind(console, "mongoose connnected"));
+db.on("error", console.error.bind(console, "Mongoose error:"));
+db.once("open", console.warn.bind(console, "Mongoose connnected"));
 
 // Schema
 const userSchema = require("../models/user");
