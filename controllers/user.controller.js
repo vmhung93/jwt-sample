@@ -20,6 +20,8 @@ const seedAdmin = async (req, res, next) => {
       username: "admin",
       password: "admin",
       roles: Role.Admin,
+      address: "38 Wild Rose St.Windsor",
+      phone: "(04)35142986",
     });
 
     return res.sendStatus(200).end();
@@ -40,6 +42,8 @@ const seedUsers = async (req, res, next) => {
         username: "peter.brooks",
         password: "123x@X",
         roles: Role.User,
+        address: "9413 Elizabeth Dr.Wheaton",
+        phone: "(781)2130588",
       },
       {
         firstName: "Louis",
@@ -47,6 +51,8 @@ const seedUsers = async (req, res, next) => {
         username: "louis.russell",
         password: "123x@X",
         roles: Role.User,
+        address: "81 Wild Horse Lane Glenside",
+        phone: "(344)6461486",
       },
     ]);
 
