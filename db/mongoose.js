@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
+
 const config = require("../utils/configuration");
+const logger = require("../utils/logger");
 
 const connectionOptions = {
   useCreateIndex: true,
@@ -15,9 +17,17 @@ const db = mongoose.connection;
 db.on("error", console.error.bind(console, "Mongoose error:"));
 db.once("open", console.warn.bind(console, "Mongoose connnected"));
 
-// Schema
-const userSchema = require("../models/user");
+// Handle error
+const handleError = (err) => {
+  logger.error(err);
+};
+
+// Model
+const userModel = require("../models/user");
+const userProfileModel = require("../models/user.profile");
 
 module.exports.db = {
-  User: userSchema,
+  User: userModel,
+  UserProfile: userProfileModel,
+  HandleError: handleError,
 };
