@@ -13,6 +13,9 @@ const generateAuthUrl = (req, res, next) => {
   }
 };
 
+/**
+ * Retrieve access token
+ */
 const retrieveAccessToken = async (req, res, next) => {
   try {
     const code = req.query.code;

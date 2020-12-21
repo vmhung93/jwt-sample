@@ -8,7 +8,6 @@ const { db } = require("../db/mongoose");
  */
 const create = async (obj) => {
   try {
-    debugger;
     const profile = new db.UserProfile({
       _id: new mongoose.Types.ObjectId(),
       address: obj.address,
@@ -41,7 +40,6 @@ const create = async (obj) => {
  */
 const createMany = async (obj) => {
   try {
-    debugger;
     let profiles = [];
     let users = [];
 
@@ -119,10 +117,26 @@ const findById = async (userId) => {
   }
 };
 
+/**
+ * Paginate
+ */
+const paginate = async (query, pagingOptions) => {
+  try {
+    pagingOptions = Object.assign({}, pagingOptions, { populate: ["profile"]});
+    
+    const users = await db.User.paginate(query, pagingOptions);
+
+    return users;
+  } catch (e) {
+    throw new Error(e);
+  }
+};
+
 module.exports = {
   create,
   createMany,
   find,
   findOne,
   findById,
+  paginate,
 };

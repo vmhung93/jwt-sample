@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const mongoosePaginate = require("../db/mongoose.paginate");
+
 const Schema = mongoose.Schema;
 
 const schemaOptions = { timestamps: true };
@@ -28,5 +30,8 @@ schema.set("toJSON", {
     delete ret.passwordHash;
   },
 });
+
+// Add plugin to schema
+schema.plugin(mongoosePaginate);
 
 module.exports = mongoose.model("User", schema);
