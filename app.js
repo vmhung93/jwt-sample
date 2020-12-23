@@ -32,6 +32,7 @@ const usersRouter = require("./routes/users");
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/oauth2", oauth2Router);
+app.use("/api-docs", express.static(__dirname + "/api-docs"));
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {
