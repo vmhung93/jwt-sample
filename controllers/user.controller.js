@@ -265,7 +265,10 @@ const paginate = async (req, res, next) => {
     }
 
     // Retrieve paging option
-    const pagingOptions = pagingHelper.pagingOptions(req.query);
+    let pagingOptions = pagingHelper.pagingOptions(req.query);
+    pagingOptions = Object.assign({}, pagingOptions, {
+      populate: ["profile"],
+    });
 
     const users = await userService.paginate(query, pagingOptions);
 

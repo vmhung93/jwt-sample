@@ -105,3 +105,6 @@ dist
 
 # Development config
 /config.development.json
+
+# API document
+api-docs

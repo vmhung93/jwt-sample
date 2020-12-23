@@ -122,8 +122,6 @@ const findById = async (userId) => {
  */
 const paginate = async (query, pagingOptions) => {
   try {
-    pagingOptions = Object.assign({}, pagingOptions, { populate: ["profile"]});
-    
     const users = await db.User.paginate(query, pagingOptions);
 
     return users;
